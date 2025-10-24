@@ -1,0 +1,61 @@
+main{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color:#1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.semaforo {
+    width: 200px;
+    height: 500px;
+    background: #2e2d2d;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .luz {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #111;
+    opacity: 0.3; /* apagada */
+  }
+  
+  .luz.acesa { opacity: 1; }
+
+  .botoes{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .botao{
+    background-color: #3a3a3a;
+    width: 65px;
+    height: 45px;
+    border-radius: 5px;
+  }
+
+  .velocidade{
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .botao:hover{
+    color: #555555;
+  }
+  
+  #vermelho.acesa { background: #f42214; }
+  #amarelo.acesa { background: #f8b80b; }
+  #verde.acesa { background: #76b00c; }
+  
