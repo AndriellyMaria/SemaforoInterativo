@@ -19,6 +19,10 @@ main{
     gap: 30px;
     justify-content: center;
     align-items: center;
+    background-image: url('./img/img_fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   
   .luz {
@@ -26,12 +30,16 @@ main{
     height: 100px;
     border-radius: 50%;
     background: #111;
-    opacity: 0.3; /* apagada */
+    opacity: 1; /* apagada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   
   .luz.acesa { opacity: 1; }
 
   .botoes{
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 100px;
     display: flex;
     justify-content: center;
@@ -43,19 +51,32 @@ main{
     background-color: #3a3a3a;
     width: 65px;
     height: 45px;
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
-  .velocidade{
-    margin-top: 10px;
+  .velocidade {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
     gap: 10px;
+    color: #b0b0b0;
+  }
+  
+  .velocidade span {
+    font-size: 14px;
   }
 
   .botao:hover{
     color: #555555;
   }
-  
-  #vermelho.acesa { background: #f42214; }
-  #amarelo.acesa { background: #f8b80b; }
-  #verde.acesa { background: #76b00c; }
-  
+  #estadoAtual{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
+  /* A cor de fundo é um pouco mais escura que a cor da imagem, gerando um leve contraste entre as luzes */
+  #vermelho.acesa { background-color: #4a0300; background-image: url('./img/vermelho.png'); }
+  #amarelo.acesa { background-color: #7a3b00; background-image: url('./img/amarelo.png'); }
+  #verde.acesa { background-color: #0f2d0e; background-image: url('./img/verde.png'); }

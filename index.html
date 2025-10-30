@@ -9,12 +9,14 @@
 <body>
 
     <main>
+        <!-- estrutura do semáforo -->
         <div class="semaforo">
             <div id="vermelho" class="luz"></div>
             <div id="amarelo" class="luz"></div>
             <div id="verde" class="luz"></div>
         </div>
-    
+
+    <!-- Botões principais -->
         <div class="botoes">
             <button id="iniciar" class="botao">Iniciar</button>
             <button id="parar" class="botao">Parar</button>
@@ -22,11 +24,14 @@
             <button id="botao_amarelo" class="botao">Amarelo</button>
             <button id="botao_verde" class="botao">Verde</button>
         </div>
-
+    <!-- Botões/medidor de velocidade -->
         <div class="velocidade">
-            <button id="aumentarVelocidade" class="botao">+ veloz</button>
-            <button id="diminuirVelocidade" class="botao">- veloz</button>
-        </div>
+            <button id="maisRapido" class="botao">+ Rápido</button>
+            <button id="maisDevagar" class="botao">- Devagar</button>
+            <span id="velocidadeAtual">Velocidade: 1s</span>
+          </div>
+          <p id="estadoAtual" class="estado">Estado atual: —</p>
+
     </main>
 
   <script src="script.js"></script>
