@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const botao_verde = document.getElementById('botao_verde');
     const iniciar = document.getElementById('iniciar');
     const parar = document.getElementById('parar');
-    const maisRapido = document.getElementById('maisRapido');
-    const maisDevagar = document.getElementById('maisDevagar');
+    const controleVelocidade = document.getElementById('controleVelocidade');
     const velocidadeTexto = document.getElementById('velocidadeAtual');
     const estadoAtual = document.getElementById('estadoAtual');
 
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function atualizarVelocidadeTexto() {
       velocidadeTexto.textContent = `Velocidade: ${(tempo / 1000).toFixed(1)}s`;
-    }  // Atualiza a velocidade quando o botão aumentar/diminuir é clicado
+    }  // Atualiza a velocidade quando o botão aumentar/diminuir é mexido
     
     // Informa o estado atual do semáforo para o usuário
     function atualizarEstadoTexto() {
@@ -98,26 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (intervalo) return;
         acenderVerde()
     });
-
-    maisRapido.addEventListener('click', () => {
-      if (tempo > 300) tempo -= 200; // limite mínimo
+    // Botão de controle de velocidade
+    controleVelocidade.addEventListener('input', () => {
+      tempo = parseInt(controleVelocidade.value);
       atualizarVelocidadeTexto();
   
       if (intervalo) {
-        clearInterval(intervalo);
-        intervalo = setInterval(mudarLuz, tempo);
+          clearInterval(intervalo);
+          intervalo = setInterval(mudarLuz, tempo);
       }
-    });
-  
-    maisDevagar.addEventListener('click', () => {
-      if (tempo < 5000) tempo += 200; // limite máximo
-      atualizarVelocidadeTexto();
-  
-      if (intervalo) {
-        clearInterval(intervalo);
-        intervalo = setInterval(mudarLuz, tempo);
-      }
-    });
+  });
   
     atualizarVelocidadeTexto();
   });
